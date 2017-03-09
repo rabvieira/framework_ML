@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
 public class Controller {
 	File file;
 	Writer writer = null;
-	 StringBuffer sb = new StringBuffer();
+	StringBuffer sb = new StringBuffer();
 
 	// static String WIN_PROGRAMFILES = System.getenv("programfiles");
 	// static String FILE_SEPARATOR = System.getProperty("file.separator");
@@ -118,7 +118,6 @@ public class Controller {
 	}
 
 	public void LoadWindow() throws Exception {
-
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/A.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
@@ -133,7 +132,7 @@ public class Controller {
 	// http://weka.sourceforge.net/doc.dev/weka/classifiers/Classifier.html
 	public void check_KNN() {
 		System.out.println("DT");
-		sb.append("weka.classifiers.lazy.IBk\n"); 
+		sb.append("weka.classifiers.lazy.IBk\n");
 	}
 
 	public void check_DesicionTree() {
@@ -143,20 +142,25 @@ public class Controller {
 
 	public void Done() throws IOException {
 		System.out.println("Done");
-		try{
-		    PrintWriter writer = new PrintWriter("classifiers.txt", "UTF-8");
-		    writer.println(sb.toString());
-		    writer.close();
+		try {
+			PrintWriter writer = new PrintWriter("classifiers.txt", "UTF-8");
+			writer.println(sb.toString());
+			writer.close();
 		} catch (IOException e) {
-		   // do something
+			// do something
 		}
 	}
-	
-	public void Selecting(){
-		
-		
-		
+
+	public void Selecting() {
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/B.fxml"));
+			Parent root1 = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root1));
+			stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
-
-

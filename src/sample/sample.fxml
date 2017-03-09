@@ -37,7 +37,7 @@
                   <Button layoutX="29.0" layoutY="80.0" mnemonicParsing="false" onAction="#RunShell" prefHeight="25.0" prefWidth="103.0" text="Shell" />
                   <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#LoadDirectory" prefHeight="25.0" prefWidth="103.0" text="Directory" />
                   <Button layoutX="29.0" layoutY="113.0" mnemonicParsing="false" onAction="#LoadWindow" prefHeight="25.0" prefWidth="103.0" text="Classifier" />
-                  <Button layoutX="29.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Selecting" />
+                  <Button layoutX="29.0" layoutY="145.0" mnemonicParsing="false" onAction="#Selecting" prefHeight="25.0" prefWidth="103.0" text="Selecting" />
                </children>
             </Pane>
             <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="215.0" prefWidth="168.0">
