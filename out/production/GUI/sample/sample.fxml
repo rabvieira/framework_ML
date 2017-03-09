@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar VBox.vgrow="ALWAYS">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane>
+         <children>
+            <Pane layoutX="160.0" layoutY="-1.0" prefHeight="215.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="24.0" layoutY="95.0" mnemonicParsing="false" onAction="#RunScript" prefHeight="25.0" prefWidth="103.0" text="Button 2" />
+                  <Button layoutX="24.0" layoutY="147.0" mnemonicParsing="false" onAction="#RunShell" prefHeight="25.0" prefWidth="103.0" text="Button 3" />
+                  <Button layoutX="24.0" layoutY="43.0" mnemonicParsing="false" onAction="#LoadDirectory" prefHeight="25.0" prefWidth="103.0" text="Button 1" />
+               </children>
+            </Pane>
+            <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="215.0" prefWidth="168.0">
+               <children>
+                  <Text layoutX="73.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</VBox>

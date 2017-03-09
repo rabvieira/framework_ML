@@ -1,0 +1,3 @@
+weka.classifiers.lazy.IBk
+weka.classifiers.trees.DecisionStump
+

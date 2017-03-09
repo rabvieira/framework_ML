@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar VBox.vgrow="ALWAYS">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane>
+         <children>
+            <Pane layoutX="160.0" layoutY="-1.0" prefHeight="215.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="29.0" layoutY="47.0" mnemonicParsing="false" onAction="#RunScript" prefHeight="25.0" prefWidth="103.0" text="Python" />
+                  <Button layoutX="29.0" layoutY="80.0" mnemonicParsing="false" onAction="#RunShell" prefHeight="25.0" prefWidth="103.0" text="Shell" />
+                  <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#LoadDirectory" prefHeight="25.0" prefWidth="103.0" text="Directory" />
+                  <Button layoutX="29.0" layoutY="113.0" mnemonicParsing="false" onAction="#LoadWindow" prefHeight="25.0" prefWidth="103.0" text="Classifier" />
+                  <Button layoutX="29.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Selecting" />
+               </children>
+            </Pane>
+            <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="215.0" prefWidth="168.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Learning Framework" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</VBox>
