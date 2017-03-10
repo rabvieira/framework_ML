@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -27,6 +29,16 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="161.0" layoutY="43.0" mnemonicParsing="false" onAction="#LoadTrain" prefHeight="25.0" prefWidth="69.0" text="Train" />
+            <Button layoutX="161.0" layoutY="89.0" mnemonicParsing="false" onAction="#LoadValidation" text="Validation" />
+            <Button layoutX="161.0" layoutY="132.0" mnemonicParsing="false" onAction="#LoadTest" prefHeight="25.0" prefWidth="69.0" text="Test" />
+            <Text layoutX="69.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select train" />
+            <Text layoutX="55.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select validation" />
+            <Text layoutX="69.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select test" />
+            <Button fx:id="closeButton" layoutX="180.0" layoutY="174.0" mnemonicParsing="false" onAction="#ButtonOk" text="Ok" />
+            
+         </children></Pane>
    </children>
 </VBox>

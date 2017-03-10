@@ -10,13 +10,18 @@ import java.io.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 //import org.python.util.PythonInterpreter;
 
 public class Controller {
+	public Button closeButton;
 	File file;
 	Writer writer = null;
 	StringBuffer sb = new StringBuffer();
+	StringBuffer tra  = new StringBuffer();
+	StringBuffer val  = new StringBuffer();
+	StringBuffer tes  = new StringBuffer();
 
 	// static String WIN_PROGRAMFILES = System.getenv("programfiles");
 	// static String FILE_SEPARATOR = System.getProperty("file.separator");
@@ -43,42 +48,7 @@ public class Controller {
 	}
 
 	public void RunScript() throws Exception {
-		// String[] cmd = {"/bin/sh", "-c", "ls > hello"};
-		// Process p = Runtime.getRuntime().exec("notepad.exe test.txt");
-		// Process p = Runtime.getRuntime().exec("python.exe print('hello')");
-		// Process p = Runtime.getRuntime().exec("rundll32
-		// url.dll,FileProtocolHandler
-		// C:/Users/rvieira/Desktop/Cursos/DesignPatterns.pdf");
 
-		/*
-		 * String[] commands = {"cmd.exe", "/c", WIN_PROGRAMFILES +
-		 * FILE_SEPARATOR + "Notepad++" + FILE_SEPARATOR + "notepad++.exe"};
-		 * 
-		 * Process p = Runtime.getRuntime().exec("cmd.exe");
-		 * 
-		 * p.waitFor();
-		 */
-		/*
-		 * String command = "C:/Python27/python.exe print('hello')"; //String
-		 * command = "C:/Program Files (x86)/Notepad++/notepad++.exe";
-		 * ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", command);
-		 * Process p = pb.start();
-		 * 
-		 * int returnCode = p.waitFor(); System.out.println("Return code = " +
-		 * returnCode);
-		 *
-		 * 
-		 * /* String prg =
-		 * "import sys\nprint int(sys.argv[1])+int(sys.argv[2])\n";
-		 * BufferedWriter out = new BufferedWriter(new FileWriter("test1.py"));
-		 * out.write(prg); out.close(); int number1 = 10; int number2 = 32;
-		 * Process p =
-		 * Runtime.getRuntime().exec("python test1.py "+number1+" "+number2);
-		 * BufferedReader in = new BufferedReader(new
-		 * InputStreamReader(p.getInputStream())); int ret = new
-		 * Integer(in.readLine()).intValue();
-		 * System.out.println("value is : "+ret);
-		 */
 		Process p = Runtime.getRuntime().exec("python test.py");
 		BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		String ret = new String(in.readLine());
@@ -86,25 +56,6 @@ public class Controller {
 	}
 
 	public void RunShell() throws Exception {
-
-		// Process p = Runtime.getRuntime().exec("terminal.lnk");
-		/*
-		 * ProcessBuilder pb = new ProcessBuilder("cmd", "/c",
-		 * "C:\\Users\\rvieira\\IdeaProjects\\GUI\\terminal.lnk"); Process p =
-		 * pb.start(); //p.waitFor();
-		 */
-
-		/*
-		 * try { Process proc = Runtime.getRuntime().exec("test.sh /");
-		 * //Whatever you want to execute BufferedReader read = new
-		 * BufferedReader(new InputStreamReader( proc.getInputStream())); try {
-		 * proc.waitFor(); } catch (InterruptedException e) {
-		 * System.out.println(e.getMessage()); } while (read.ready()) {
-		 * System.out.println(read.readLine()); } } catch (IOException e) {
-		 * System.out.println(e.getMessage()); }
-		 */
-
-		// Process p = Runtime.getRuntime().exec("test.sh");
 
 		String target = new String("bash /home/rabvieira/workspace/ScriptClass/test.sh");
 		// String target = new String(".
@@ -163,4 +114,71 @@ public class Controller {
 		}
 
 	}
+	
+	public void LoadTrain() {
+		final Label labelFile = new Label();
+
+		System.out.println("button clicked");
+		FileChooser fileChooser = new FileChooser();
+
+		// Set extension filter
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("arff files (*.arff)", "*.arff");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		// Show open file dialog
+		file = fileChooser.showOpenDialog(null);
+
+		labelFile.setText(file.getPath());
+		System.out.println(labelFile.getText());
+		
+		tra.append(labelFile.getText());
+		System.out.println(tra);
+	}
+	
+	public void LoadValidation() {
+		final Label labelFile = new Label();
+
+		System.out.println("button clicked");
+		FileChooser fileChooser = new FileChooser();
+
+		// Set extension filter
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("arff files (*.arff)", "*.arff");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		// Show open file dialog
+		file = fileChooser.showOpenDialog(null);
+
+		labelFile.setText(file.getPath());
+		System.out.println(labelFile.getText());
+		
+		val.append(labelFile.getText());
+		System.out.println(val);
+	}
+	
+	public void LoadTest() {
+		final Label labelFile = new Label();
+
+		System.out.println("button clicked");
+		FileChooser fileChooser = new FileChooser();
+
+		// Set extension filter
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("arff files (*.arff)", "*.arff");
+		fileChooser.getExtensionFilters().add(extFilter);
+
+		// Show open file dialog
+		file = fileChooser.showOpenDialog(null);
+
+		labelFile.setText(file.getPath());
+		System.out.println(labelFile.getText());
+		
+		tes.append(labelFile.getText());
+		System.out.println(tes);
+	}
+	
+	public void ButtonOk() {
+		
+		Stage stage = (Stage) closeButton.getScene().getWindow();
+	    stage.close();
+	}
+	
 }
